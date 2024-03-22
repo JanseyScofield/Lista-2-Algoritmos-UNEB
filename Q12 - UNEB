@@ -1,0 +1,136 @@
+/*Faça um algoritmo que leia 3 valores l1, l2 e l3 e verifique se formam um
+triângulo e, se formarem, o tipo de triângulo formado, escreva: 0 - se não
+formarem triângulo; 1 - se formarem um triângulo equilátero (os três lados são
+iguais); 2 - se formarem um triângulo isósceles (dois lados iguais e um
+diferente); 3 - se formarem um triângulo escaleno (3 lados diferentes)*/
+
+
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+float l1, l2, l3, l11, l22, l33, areaEsc, areaIso, areaEqui; //variáveis necessárias
+
+int main(){
+	setlocale(LC_ALL, "");
+	printf("Digite o valor do primeiro lado: \n");
+	scanf("%f", &l11);
+	printf("Digite o valor do segundo lado: \n");
+	scanf("%f", &l22);
+	printf("Digite o valor do terceiro lado: \n");
+	scanf("%f", &l33);
+
+
+	if(l11 > l22 && l11 > l33){
+		l1 = l11;
+		l2 = l22;
+		l3 = l33;
+		if(l1 > (l2+l3) || l1 < (l2-l3)){
+			printf("-1");
+		} else {
+			if(l1 != l2 && l1 != l3 && l3 != l2){
+				float p, x;
+				p = (l1 + l2 + l3) / 2;
+				x = p * (p-l1) * (p-l2) * (p-l3);
+				areaEsc = sqrt(x);
+				printf("Esse triângulo é escaleno! Sua área é: %.1f", areaEsc);
+			} else if(l1 == l2 && l2 != l3){
+				float c1, aR, altura, alturaQuad;
+				c1 = l3 / 2;
+				alturaQuad = (c1 * c1) + (l2 * l2);
+				altura = sqrt(alturaQuad);
+				areaIso = (l3 * altura) / 2;
+				printf("Esse triângulo é isocele! Sua área é: %.1f", areaIso);
+			} else if(l1 == l3 && l3 != l2){
+				float c1, aR, altura, alturaQuad;
+				c1 = l2 / 2;
+				alturaQuad = (c1 * c1) + (l1 * l1);
+				altura = sqrt(alturaQuad);
+				areaIso = (l2 * altura) / 2;
+				printf("Esse triângulo é isocele! Sua área é: %.1f", areaIso);
+			} else if(l2 == l3 && l3 != l1){
+				float c1, aR, altura, alturaQuad;
+				c1 = l1 / 2;
+				alturaQuad = (c1 * c1) + (l2 * l2);
+				altura = sqrt(alturaQuad);
+				areaIso = (l1 * altura) / 2;
+				printf("Esse triângulo é isocele! Sua área é: %.1f", areaIso);
+			}
+		};
+	}   else if (l22 > l11 && l22 > l33){
+		l1 = l22;
+		l2 = l11;
+		l3 = l33;
+		if(l1 > (l2+l3) || l1 < (l2-l3)){
+			printf("-1");
+		} else {
+			if(l1 != l2 && l1 != l3 && l3 != l2){
+				float p, x;
+				p = (l1 + l2 + l3) / 2;
+				x = p * (p-l1) * (p-l2) * (p-l3);
+				areaEsc = sqrt(x);
+				printf("Esse triângulo é escaleno! Sua área é: %.1f", areaEsc);
+			} else if(l1 == l2 && l2 != l3){
+				float c1, aR, altura, alturaQuad;
+				c1 = l3 / 2;
+				alturaQuad = (c1 * c1) + (l2 * l2);
+				altura = sqrt(alturaQuad);
+				areaIso = (l3 * altura) / 2;
+				printf("Esse triângulo é isocele! Sua área é: %.1f", areaIso);
+			} else if(l1 == l3 && l3 != l2){
+				float c1, aR, altura, alturaQuad;
+				c1 = l2 / 2;
+				alturaQuad = (c1 * c1) + (l1 * l1);
+				altura = sqrt(alturaQuad);
+				areaIso = (l2 * altura) / 2;
+				printf("Esse triângulo é isocele! Sua área é: %.1f", areaIso);
+			} else if(l2 == l3 && l3 != l1){
+				float c1, aR, altura, alturaQuad;
+				c1 = l1 / 2;
+				alturaQuad = (c1 * c1) + (l2 * l2);
+				altura = sqrt(alturaQuad);
+				areaIso = (l1 * altura) / 2;
+				printf("Esse triângulo é isocele! Sua área é: %.1f", areaIso);
+			}
+		}
+	} else if(l33 > l11 && l33 > l22){
+		l1 = l33;
+		l2 = l22;
+		l3 = l11;
+		if(l1 > (l2+l3) || l1 < (l2-l3)){
+			printf("-1");
+		} else{
+			if(l1 != l2 && l1 != l3 && l3 != l2){
+				float p, x;
+				p = (l1 + l2 + l3) / 2;
+				x = p * (p-l1) * (p-l2) * (p-l3);
+				areaEsc = sqrt(x);
+				printf("Esse triângulo é escaleno! Sua área é: %.1f", areaEsc);
+			} else if(l1 == l2 && l2 != l3){
+				float c1, aR, altura, alturaQuad;
+				c1 = l3 / 2;
+				alturaQuad = (c1 * c1) + (l2 * l2);
+				altura = sqrt(alturaQuad);
+				areaIso = (l3 * altura) / 2;
+				printf("Esse triângulo é isocele! Sua área é: %.1f", areaIso);
+			} else if(l1 == l3 && l3 != l2){
+				float c1, aR, altura, alturaQuad;
+				c1 = l2 / 2;
+				alturaQuad = (c1 * c1) + (l1 * l1);
+				altura = sqrt(alturaQuad);
+				areaIso = (l2 * altura) / 2;
+				printf("Esse triângulo é isocele! Sua área é: %.1f", areaIso);
+			} else if(l2 == l3 && l3 != l1){
+				float c1, aR, altura, alturaQuad;
+				c1 = l1 / 2;
+				alturaQuad = (c1 * c1) + (l2 * l2);
+				altura = sqrt(alturaQuad);
+				areaIso = (l1 * altura) / 2;
+				printf("Esse triângulo é isocele! Sua área é: %.1f", areaIso);
+			}
+		}
+	} else if(l11 == l22 && l22 == l33){
+				areaEqui = ((l11 * l11) * sqrt(3)) / 4;
+				printf("Esse triângulo é equilátero! Sua área é: %.1f", areaEqui);
+	}
+}
