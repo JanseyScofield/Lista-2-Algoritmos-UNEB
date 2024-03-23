@@ -64,14 +64,14 @@ int main (){
 				printf("O resultado da sua divisão: %.11f / %.11f = %.11f\n", v1, v2, res);
                 break;
             };
-            case 5:{
+            case 5:{ // RAIZ QUADRADA
             	printf("Digite o primeiro valor que deseja tirar a raiz\n");
 				scanf("%f", &v1);
 				res = sqrt(v1);
 				printf("A raiz quadrada de %.11f é %.11f.\n", v1, res);
 				break;
 			};
-			case 6:{
+			case 6:{ // POTÊNCIA
 				printf("Digite o valor que deseja elevar:\n");
 				scanf("%f", &v1);
 				printf("Digite o expoente:\n");
