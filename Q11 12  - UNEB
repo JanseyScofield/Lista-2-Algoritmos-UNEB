@@ -9,7 +9,7 @@ diferente); 3 - se formarem um triângulo escaleno (3 lados diferentes)*/
 #include <locale.h>
 #include <math.h>
 
-float l1, l2, l3, l11, l22, l33, areaEsc, areaIso, areaEqui; //variáveis necessárias
+float l1, l2, l3, l11, l22, l33, areaEsc, areaIso, areaEqui, perimetro; //variáveis necessárias
 int pergunta, i;
 int main(){
 
@@ -30,31 +30,35 @@ do {
 		} else {
 			if(l1 != l2 && l1 != l3 && l3 != l2){
 				float p, x;
+				perimetro = l11 + l22 + l33;
 				p = (l1 + l2 + l3) / 2;
 				x = p * (p-l1) * (p-l2) * (p-l3);		//Triângulo escaleno
 				areaEsc = sqrt(x);
-				printf("Esse triângulo é escaleno! Sua área é: %.1f\n", areaEsc);
+				printf("Esse triângulo é escaleno! Sua área é: %.1f e seu perímetro é %.1f\n", areaEsc, perimetro);
 			} else if(l1 == l2 && l2 != l3){
 				float c1, aR, altura, alturaQuad;
+				perimetro = l11 + l22 + l33;
 				c1 = l3 / 2;
 				alturaQuad = (l2 * l2) - (c1 * c1);			//Triângulo Isocele
 				altura = sqrt(alturaQuad);
 				areaIso = (l3 * altura) / 2;
-				printf("Esse triângulo é isósceles! Sua área é: %.1f\n", areaIso);
+				printf("Esse triângulo é isósceles! Sua área é: %.1f e seu perímetro é %.1f\n", areaIso, perimetro);
 			} else if(l1 == l3 && l3 != l2){
 				float c1, aR, altura, alturaQuad;
+				perimetro = l11 + l22 + l33;
 				c1 = l2 / 2;
 				alturaQuad = (l1 * l1) - (c1 * c1);			//Triângulo Isocele
 				altura = sqrt(alturaQuad);
 				areaIso = (l2 * altura) / 2;
-				printf("Esse triângulo é isósceles! Sua área é: %.1f\n", areaIso);
+				printf("Esse triângulo é isósceles! Sua área é: %.1f e seu perímetro é %.1f\n", areaIso);
 			} else if(l2 == l3 && l3 != l1){
 				float c1, aR, altura, alturaQuad;
+				perimetro = l11 + l22 + l33;
 				c1 = l1 / 2;
 				alturaQuad = (l2 * l2) - (c1 * c1);			//Triângulo Isocele
 				altura = sqrt(alturaQuad);
 				areaIso = (l1 * altura) / 2;
-				printf("Esse triângulo é isósceles! Sua área é: %.1f\n", areaIso);
+				printf("Esse triângulo é isósceles! Sua área é: %.1f e seu perímetro é %.1f\n", areaIso, perimetro);
 			}
 		};
 	}   else if (l22 > l11 && l22 > l33){
@@ -66,31 +70,35 @@ do {
 		} else {
 			if(l1 != l2 && l1 != l3 && l3 != l2){
 				float p, x;
+				perimetro = l11 + l22 + l33;
 				p = (l1 + l2 + l3) / 2;
 				x = p * (p-l1) * (p-l2) * (p-l3);			//Triângulo escaleno
 				areaEsc = sqrt(x);
-				printf("Esse triângulo é escaleno! Sua área é: %.1f\n", areaEsc);
+				printf("Esse triângulo é escaleno! Sua área é: %.1f e seu perímetro é %.1f\n", areaEsc, perimetro);
 			} else if(l1 == l2 && l2 != l3){
 				float c1, aR, altura, alturaQuad;
+				perimetro = l11 + l22 + l33;
 				c1 = l3 / 2;
 				alturaQuad = (l2 * l2) - (c1 * c1); 		//Triângulo Isocele
 				altura = sqrt(alturaQuad);
 				areaIso = (l3 * altura) / 2;
-				printf("Esse triângulo é isósceles! Sua área é: %.1f\n", areaIso);
+				printf("Esse triângulo é isósceles! Sua área é: %.1f e seu perímetro é %.1f\n", areaIso, perimetro);
 			} else if(l1 == l3 && l3 != l2){
 				float c1, aR, altura, alturaQuad;
+				perimetro = l11 + l22 + l33;
 				c1 = l2 / 2;
 				alturaQuad = (l1 * l1) - (c1 * c1);			//Triângulo Isocele
 				altura = sqrt(alturaQuad);
 				areaIso = (l2 * altura) / 2;
-				printf("Esse triângulo é isósceles! Sua área é: %.1f\n", areaIso);
+				printf("Esse triângulo é isósceles! Sua área é: %.1f e seu perímetro é %.1f\n", areaIso, perimetro);
 			} else if(l2 == l3 && l3 != l1){
 				float c1, aR, altura, alturaQuad;
+				perimetro = l11 + l22 + l33;
 				c1 = l1 / 2;
 				alturaQuad = (l2 * l2) - (c1 * c1);			//Triângulo Isocele
 				altura = sqrt(alturaQuad);
 				areaIso = (l1 * altura) / 2;
-				printf("Esse triângulo é isósceles! Sua área é: %.1f\n", areaIso);
+				printf("Esse triângulo é isósceles! Sua área é: %.1f e seu perímetro é %.1f\n", areaIso, perimetro);
 			}
 		}
 	} else if(l33 > l11 && l33 > l22){
@@ -102,41 +110,46 @@ do {
 		} else{
 			if(l1 != l2 && l1 != l3 && l3 != l2){
 				float p, x;
+				perimetro = l11 + l22 + l33;
 				p = (l11 + l22 + l33) / 2;
 				x = p * (p-l1) * (p-l2) * (p-l3);			//Triângulo escaleno
 				areaEsc = sqrt(x);
-				printf("Esse triângulo é escaleno! Sua área é: %.1f\n", areaEsc);
+				printf("Esse triângulo é escaleno! Sua área é: %.1f e seu perímetro é %.1f\n", areaEsc, perimetro);
 			} else if(l1 == l2 && l2 != l3){
 				float c1, aR, altura, alturaQuad;
+				perimetro = l11 + l22 + l33;
 				c1 = l3 / 2;
 				alturaQuad = (l2 * l2) - (c1 * c1);			//Triângulo Isocele
 				altura = sqrt(alturaQuad);
 				areaIso = (l3 * altura) / 2;
-				printf("Esse triângulo é isósceles! Sua área é: %.1f\n", areaIso);
+				printf("Esse triângulo é isósceles! Sua área é: %.1f e seu perímetro é %.1f\n", areaIso, perimetro);
 			} else if(l1 == l3 && l3 != l2){
 				float c1, aR, altura, alturaQuad;
+				perimetro = l11 + l22 + l33;
 				c1 = l2 / 2;
 				alturaQuad = (l1 * l1) - (c1 * c1);			//Triângulo Isocele
 				altura = sqrt(alturaQuad);
 				areaIso = (l2 * altura) / 2;
-				printf("Esse triângulo é isósceles! Sua área é: %.1f\n", areaIso);
+				printf("Esse triângulo é isósceles! Sua área é: %.1f e seu perímetro é %.1f\n", areaIso, perimetro);
 			} else if(l2 == l3 && l3 != l1){
 				float c1, aR, altura, alturaQuad;
+				perimetro = l11 + l22 + l33;
 				c1 = l1 / 2;
 				alturaQuad = (l2 * l2) - (c1 * c1);			//Triângulo Isocele
 				altura = sqrt(alturaQuad);
 				areaIso = (l1 * altura) / 2;
-				printf("Esse triângulo é isósceles! Sua área é: %.1f\n", areaIso);
+				printf("Esse triângulo é isósceles! Sua área é: %.1f e seu perímetro é %.1f\n", areaIso, perimetro);
 			}
 		}
 	} else if(l11 == l22 && l22 == l33){
+				perimetro = l11 + l22 + l33;
 				areaEqui = ((l11 * l11) * sqrt(3)) / 4;				//Triângulo Equilátero (caso único)
-				printf("Esse triângulo é equilátero! Sua área é: %.1f\n", areaEqui);
+				printf("Esse triângulo é equilátero! Sua área é: %.1f e seu perímetro é %.1f\n", areaEqui, perimetro);
 	};
 	printf("Deseja calcular outro triângulo?\n");
 	printf("Digite 1 para SIM, 2 para NÃO.\n");
 	scanf("%d", &pergunta);
-	if(pergunta == 1){						//loop para novo cálculo
+	if(pergunta == 1){
 		i = i + 0;
 	} else if (pergunta == 2){
 		i = i + 5;
